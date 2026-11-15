@@ -1,0 +1,32 @@
+html.yfb-hide-shorts ytd-reel-shelf-renderer,
+html.yfb-hide-shorts ytd-reel-video-renderer,
+html.yfb-hide-shorts ytd-rich-shelf-renderer[is-shorts],
+html.yfb-hide-shorts ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+html.yfb-hide-shorts ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html.yfb-hide-shorts ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
+html.yfb-hide-shorts ytd-shorts,
+html.yfb-hide-shorts a[href^="/shorts/"] {
+  display: none !important;
+}
+
+html.yfb-hide-recommendations ytd-watch-next-secondary-results-renderer,
+html.yfb-hide-recommendations #related,
+html.yfb-hide-recommendations ytd-compact-autoplay-renderer,
+html.yfb-hide-recommendations ytd-browse[page-subtype="home"] ytd-rich-grid-renderer,
+html.yfb-hide-recommendations .ytp-endscreen-content,
+html.yfb-hide-recommendations .ytp-pause-overlay-container {
+  display: none !important;
+}
+
+html.yfb-hide-comments #comments,
+html.yfb-hide-comments ytd-comments,
+html.yfb-hide-comments ytd-item-section-renderer[section-identifier="comment-item-section"] {
+  display: none !important;
+}
+
+#yfb-gate-root {
+  all: initial !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+}

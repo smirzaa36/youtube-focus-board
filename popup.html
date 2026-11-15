@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YouTube Focus Board</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="board">
+    <header class="header">
+      <div class="mark" aria-hidden="true">Y</div>
+      <div class="title-block"><h1>YouTube Focus Board</h1><p>Make room for what you came to watch.</p></div>
+    </header>
+
+    <section class="today card" aria-label="Time spent today">
+      <div><span class="label">TIME SPENT TODAY</span><strong id="todayTime">0 min</strong></div>
+      <div id="focusStatus" class="status">YouTube is locked</div>
+    </section>
+
+    <section class="card reason-card">
+      <h2>Why are you here?</h2>
+      <p class="hint">Enter a reason to unlock YouTube for 60 minutes.</p>
+      <form id="unlockForm">
+        <input id="reasonInput" type="text" maxlength="240" placeholder="Revising thermodynamics" autocomplete="off" required>
+        <button class="primary" type="submit">Unlock for 60 minutes</button>
+        <div id="unlockMessage" class="message" role="status"></div>
+      </form>
+    </section>
+
+    <section class="card switches-card">
+      <h2>Clear the distractions</h2>
+      <label class="switch-row"><span><b>Shorts</b><small>Hide Shorts shelves and links</small></span><input id="hideShorts" type="checkbox"><i aria-hidden="true"></i></label>
+      <label class="switch-row"><span><b>Recommendations</b><small>Hide the home feed and suggestions</small></span><input id="hideRecommendations" type="checkbox"><i aria-hidden="true"></i></label>
+      <label class="switch-row"><span><b>Comments</b><small>Hide video comments</small></span><input id="hideComments" type="checkbox"><i aria-hidden="true"></i></label>
+    </section>
+
+    <section class="card study-card">
+      <div class="section-heading"><div><h2>Study list</h2><p class="hint">Save a video you want to finish.</p></div><button id="addVideo" class="quiet" type="button">+ Add current</button></div>
+      <div id="currentVideo" class="current-video">Open a YouTube video to add it here.</div>
+      <ul id="studyList" class="item-list"></ul>
+      <div id="studyEmpty" class="empty">No saved videos yet.</div>
+    </section>
+
+    <section class="card notes-card">
+      <div class="section-heading"><div><h2>Timestamp notes</h2><p class="hint">Add a note at the current video time.</p></div></div>
+      <form id="noteForm" class="note-form">
+        <input id="noteInput" type="text" maxlength="500" placeholder="Write a note about this moment" autocomplete="off" required>
+        <button class="primary" type="submit">Save note here</button>
+        <div id="noteMessage" class="message" role="status"></div>
+      </form>
+      <ul id="notesList" class="item-list notes-list"></ul>
+      <div id="notesEmpty" class="empty">No notes yet.</div>
+    </section>
+    <footer>Your study list, notes, settings, and time stay in this browser.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

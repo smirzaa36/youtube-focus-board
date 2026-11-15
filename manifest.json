@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Focus Board",
+  "version": "1.0.0",
+  "description": "A study list, timestamped notes, focus switches, and a 60-minute YouTube reason gate.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://*.youtube.com/*"],
+  "action": {
+    "default_title": "YouTube Focus Board",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["youtube.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
